@@ -95,12 +95,13 @@ function setupHadoopService {
 
 function setupNameNode {
 	echo "setting up namenode"
+	sudo -u vagrant chmod +x /vagrant/format-namenode.sh
 	sudo -u vagrant -i /vagrant/format-namenode.sh
 }
 
 function startHadoopService {
 	echo "starting hadoop service"
-	service hadoop start
+	sudo -u vagrant service hadoop start
 }
 
 function installHadoop {
